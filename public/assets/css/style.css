@@ -1,0 +1,19 @@
+body {
+	background-image: url(../images/city-background.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: fixed;
+}
+
+#headerDiv {
+	background-color: #DB8D8B;
+	padding: 2%;
+}
+
+input::placeholder {
+  color: red;
+}
+
+#team {
+	background-color: white;
+}

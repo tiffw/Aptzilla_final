@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Aptzilla</title>
+
+	<!--Call to Bootstrap-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!--Call to Flickity-->
+	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+	<!--Call to style CSS-->
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	
+	<!--Call to jQuery, Bootstrap, and Flickity Scripts-->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+
+	<!--Call to Custom Javascript-->
+	<script type="text/javascript" src="app.js"></script>	
+	<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+</head>
+
+
+<body>
+	<div class="container" id="headerDiv">
+		<!--Aptzilla Logo-->
+		<div class="row">
+			<a class="navbar-brand" href="#">
+				<img class="animated rubberBand" alt="Brand" src="assets/images/logo.png">
+			</a>
+		</div>
+
+		<div class="row">
+			<br>
+			<br>
+			<center>
+				<h2>Find Your Perfect Apartment...Fast!</h2>
+			</center>
+		</div>
+
+		<!-- Search Query -->
+		<form role="search" id="searchForm">
+			<div class="form-group row form-inline">
+				<div class="col-xs-1"></div>
+
+				<div class="col-xs-2">
+					<input type="text" class="form-control city" placeholder="City" id="city">
+				</div>
+
+		 <!--  	<div class="col-xs-2">
+		    	<input type="text" class="form-control" id="area" placeholder="Area">
+		    </div> -->
+
+		    <div class="col-xs-2">
+		    	<input type="text" class="form-control bedroom" placeholder="Bedroom" id="bedroom">
+		    </div>
+
+		    <div class="col-xs-2">
+		    	<input type="text" class="form-control price" placeholder="Price" id="price">
+		    </div>
+
+		    <div class="col-xs-2">
+		    	<input type="text" class="form-control state" placeholder="State" id="state">
+		    </div>
+
+		    <div class="col-xs-1">
+		    	<button type="submit" class="btn btn-primary btn-md" id="apartmentSearch">Submit</button>
+		    </div> 
+		</div>
+
+
+	<!-- 	<div class="form-group row">
+			<div class="col-xs-3">
+				<label class="form-check-label">Building Type
+					<div class="form-check">
+						<label class="form-check-label">
+							<input class="form-check-input" type="checkbox" value="">
+							Apartment
+						</label>
+					</div>
+
+					<div class="form-check">
+						<label class="form-check-label">
+							<input class="form-check-input" type="checkbox" value="">
+							House
+						</label>
+					</div>
+
+					<div class="form-check">
+						<label class="form-check-label">
+							<input class="form-check-input" type="checkbox" value="">
+							Luxury Condo
+						</label>
+					</div>
+				</label>	
+			</div>
+
+			<div class="col-xs-3">
+				<label class="form-check-label">Laundry
+					<div class="form-check">
+						<label class="form-check-label">
+							<input class="form-check-input" type="checkbox" value="">
+							In unit
+						</label>
+					</div>
+
+					<div class="form-check">
+						<label class="form-check-label">
+							<input class="form-check-input" type="checkbox" value="">
+							In building
+						</label>
+					</div>
+
+					<div class="form-check">
+						<label class="form-check-label">
+							<input class="form-check-input" type="checkbox" value="">
+							None
+						</label>
+					</div>
+				</label>
+			</div>
+
+			<div class="col-xs-3">
+				<label class="form-check-label">Amenities
+					<div class="form-check">
+						<label class="form-check-label">
+							<input class="form-check-input" type="checkbox" value="">
+							Pool
+						</label>
+					</div>
+
+					<div class="form-check">
+						<label class="form-check-label">
+							<input class="form-check-input" type="checkbox" value="">
+							Hot Tub
+						</label>
+					</div>
+
+					<div class="form-check">
+						<label class="form-check-label">
+							<input class="form-check-input" type="checkbox" value="">
+							Gym
+						</label>
+					</div>
+				</label>
+			</div>
+		-->
+<!-- 
+			<div class="col-xs-3">
+				<label class="form-check-label">Other
+					<div class="form-check">
+						<label class="form-check-label">
+							<input class="form-check-input" type="checkbox" value="">
+							Pets
+						</label>
+					</div>
+
+					<div class="form-check">
+						<label class="form-check-label">
+							<input class="form-check-input" type="checkbox" value="">
+							Parking
+						</label>
+					</div>
+
+					<div class="form-check">
+						<label class="form-check-label">
+							<input class="form-check-input" type="checkbox" value="">
+							Safe Area
+						</label>
+					</div>
+				
+					<div class="form-check">
+						<label class="form-check-label">
+							<input class="form-check-input" type="checkbox" value="">
+							Furnished
+						</label>
+					</div>
+
+					<div class="form-check">
+						<label class="form-check-label">
+							<input class="form-check-input" type="checkbox" value="">
+							Close to Caltrain
+						</label>
+					</div>
+				</label>
+			</div>
+		</div>
+	</form>  
+</div> -->
+
+<!--Card Property Section-->
+<div class="cards" id="apartments">
+	<div class="row justify-content-center align-self-centeralign-items-center justify-content-between" id="demoCards">
+		<div class="col-sm-4">
+			<div class="card">
+				<img class="card-img-top" src="assets/images/apartment_6.png" alt="Card image cap">
+
+				<div class="card-block">
+					<h4 class="card-title"> 1801 Pine St. </h4>
+					<p class="card-text">$12,000: 4BD/2BA - Gorgeous 3000 SF apartment in the heart of Lower Pacific Heights in San Francisco. </p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-4">
+			<div class="card">
+				<img class="card-img-top" src="assets/images/apartment_7.png" alt="Card image cap">
+
+				<div class="card-block">
+					<h4 class="card-title"> 500 Mission St.  </h4>
+					<p class="card-text">$4000: 1BD/1BA - Beautiful 1500 SF 1 bedroom jr and 1 bathroom apartment. Modern amenities and parking included. </p>	    
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-4">
+			<div class="card">
+				<img class="card-img-top" src="assets/images/apartment_8.png" alt="Card image cap">
+				<div class="card-block">
+					<h4 class="card-title">601 Washington St. </h4>
+					<p class="card-text">$5000: 2 BD/1BA - Don't miss this opportunity to live in one of the best neighborhoods in San Francisco. </p>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<div id="myCarousel" class="carousel slide">
+
+		<div class="carousel-inner" id="carousel">
+				<!-- <div class="item active">
+					<div class="card apartment1">
+				  	<img class="card-img-top" src="https://placehold.it/318x180" alt="Card image cap">
+				  		<div class="card-block">
+						    <h4 class="card-title"> $ADDRESS </h4>
+						    <p class="card-text">$Price: $2 Bedroom city postal</p>
+					    </div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="card apartment2">
+				  	<img class="card-img-top" src="https://placehold.it/318x180" alt="Card image cap">
+				  		<div class="card-block">
+						    <h4 class="card-title">$ADDRESS</h4>
+						    <p class="card-text">$Price: $2 Bedroom city postal</p>
+					    </div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="card apartment3">
+				  	<img class="card-img-top" src="https://placehold.it/318x180" alt="Card image cap">
+				  		<div class="card-block">
+						    <h4 class="card-title">$ADDRESS</h4>
+						    <p class="card-text">$Price: $2 Bedroom city postal</p>
+					    </div>
+					</div>
+				</div>
+				
+				<div class="item">
+					<div class="card apartment4">
+				  	<img class="card-img-top" src="https://placehold.it/318x180" alt="Card image cap">
+				  		<div class="card-block">
+						    <h4 class="card-title">$ADDRESS</h4>
+						    <p class="card-text">$Price: $2 Bedroom city postal</p>
+					    </div>
+					</div>
+				</div>
+				
+				<div class="item">
+					<div class="card apartment5">
+				  	<img class="card-img-top" src="https://placehold.it/318x180" alt="Card image cap">
+				  		<div class="card-block">
+						    <h4 class="card-title">$ADDRESS</h4>
+						    <p class="card-text">$Price: $2 Bedroom city postal</p>
+					    </div>
+					</div>
+				</div> -->
+
+			</div>
+
+			<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+
+			<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+
+</div>
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators"></ol>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner"></div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+
+			<!--Hidden until Submit is clicked-->
+
+	<!-- <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true }'>
+
+		  <div class="carousel-cell" id="cell1">
+		  	<div class="card">
+			  <img class="card-img-top" src="https://placehold.it/318x180" alt="Card image cap">
+			 
+			  	<div class="card-block">
+				    <h4 class="card-title">Card title</h4>
+				    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>	    
+	  			</div>
+			</div>
+		  </div>
+
+		  <div class="carousel-cell" id="cell2">
+		  	<div class="card">
+			  <img class="card-img-top" src="https://placehold.it/318x180" alt="Card image cap">
+			 
+			  <div class="card-block">
+				    <h4 class="card-title">Card title</h4>
+				    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>	    
+	  			</div>
+			</div>
+		  </div>
+
+		  <div class="carousel-cell" id="cell3">
+		  	<div class="card">
+			  <img class="card-img-top" src="https://placehold.it/318x180" alt="Card image cap">
+			 
+			  	<div class="card-block">
+				    <h4 class="card-title">Card title</h4>
+				    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>	    
+	  			</div>
+			</div>
+		  </div>
+
+		  <div class="carousel-cell" id="cell4">
+		  	<div class="card">
+			  <img class="card-img-top" src="https://placehold.it/318x180" alt="Card image cap">
+			 
+			  	<div class="card-block">
+				    <h4 class="card-title">Card title</h4>
+				    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>	    
+	  			</div>
+			</div>
+		  </div>
+
+		  <div class="carousel-cell" id="cell5">
+		  	<div class="card">
+			  <img class="card-img-top" src="https://placehold.it/318x180" alt="Card image cap">
+			 
+			  	<div class="card-block">
+				    <h4 class="card-title">Card title</h4>
+				    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>	    
+	  			</div>
+			</div>
+		  </div>
+		</div> -->
+
+
+		<!--End Card Property Section-->
+
+
+
+
+		<!--Team Member Section-->
+<!-- <section class="container team" id="team">
+    <div class="row">
+    	<div class="col-lg-12 text-center">
+    		<h2 class="section-heading">Our Amazing Team</h2>
+    		<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+    	</div>
+    </div>
+
+    <div class="row">
+    	<div class="col-sm-3">
+    		<div class="team-member">
+    			<center>
+        			<img class="img-circle" src="http://via.placeholder.com/300x300" alt="" style="width:200px;height:200px;">
+					<h4>Member Name</h4>
+					<p class="text-muted">Member Description</p>
+					<p class="text-muted">Why I Like Aptzilla</p>
+         		</center>
+        	</div>
+      	</div>
+      	
+      	<div class="col-sm-3">
+    		<div class="team-member">
+    			<center>
+        			<img class="img-circle" src="http://via.placeholder.com/300x300" alt="" style="width:200px;height:200px;">
+					<h4>Member Name</h4>
+					<p class="text-muted">Member Description</p>
+					<p class="text-muted">Why I Like Aptzilla</p>
+         		</center>
+        	</div>
+      	</div>
+
+      	<div class="col-sm-3">
+    		<div class="team-member">
+    			<center>
+        			<img class="img-circle" src="http://via.placeholder.com/300x300" alt="" style="width:200px;height:200px;">
+					<h4>Member Name</h4>
+					<p class="text-muted">Member Description</p>
+					<p class="text-muted">Why I Like Aptzilla</p>
+         		</center>
+        	</div>
+      	</div>
+
+		 	<div class="col-sm-3">
+    		<div class="team-member">
+    			<center>
+        			<img class="img-circle" src="http://via.placeholder.com/300x300" alt="" style="width:200px;height:200px;">
+					<h4>Member Name</h4>
+					<p class="text-muted">Member Description</p>
+					<p class="text-muted">Why I Like Aptzilla</p>
+         		</center>
+        	</div>
+      	</div>
+
+    </div>
+
+</section>
+-->
+
+<script type="text/javascript" src="js/apartments.js"></script>
+
+
+</body>
+</html>
