@@ -7,6 +7,17 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 
+ // if (process.env.JAWSDB_URL) {
+ // 	connection = mysql.createConnection(process.env.JAWSDB_URL);
+ // } else {
+ // 	connection = mysql.createConnection({
+ // 		host: 'localhost',
+ // 		user: 'root',
+ // 		password: '',
+ // 		database: 'apartments_db'
+ // 	});
+ // };
+
 // Sets up the Express App
 // =============================================================
 var app = express();

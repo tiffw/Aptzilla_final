@@ -57,6 +57,10 @@ h2 {
 	padding: 4%;
 }
 
+#myCarousel {
+	overflow:hidden;
+}
+
 /*
 .carousel-cell:before {
   display: block;

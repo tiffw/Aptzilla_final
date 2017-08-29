@@ -1,4 +1,11 @@
 {
+"name": "mysql-sequalize-heroku",
+"version": "1.0.0",
+"description": "",
+"main": "server.js",
+ "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "name": "aptzilla",
   "version": "1.0.0",
   "description": "search apartments which are safe and nearby public commute options",

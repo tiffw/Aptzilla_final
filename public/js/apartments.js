@@ -70,8 +70,8 @@ $(document).ready(function(){
 			for(var i=0; i<receivedDataFromDatabase.length; i++) {
 				console.log(i);
 				var toDisplayDiv = $('<div>')
-				.addClass('item active')
-					.append($('<div>').addClass('card apartment1')
+				.addClass('item')
+					.append($('<div>').addClass('card apartment')
 					.append($('<img>').addClass('card-img-top').attr('src',receivedDataFromDatabase[i].image_url).attr('alt','Card image cap'))
 					.append($('<div>').addClass('card-block')
 						.append($('<h4>').addClass('card-title')
@@ -89,7 +89,7 @@ $(document).ready(function(){
 				//toDisplayDiv.append('<p>' + receivedDataFromDatabase[i].lat +'</p>');
 				//toDisplayDiv.append('<p>' + receivedDataFromDatabase[i].longitude +'</p>');
 				//toDisplayDiv.append('<p>' + receivedDataFromDatabase[i].image_url +'</p>');
-				$('#carousel').append(toDisplayDiv);
+				$('.carousel-inners').append(toDisplayDiv);
 
 
 
